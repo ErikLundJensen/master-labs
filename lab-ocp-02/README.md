@@ -30,8 +30,16 @@ Either do it by using the Console (Edit deployment) or use oc to apply the new t
 ```
  image: 'docker-registry.default.svc:5000/prepare/openshift-cli:4.11b'
 ```
+For example by using the pod's terminal:
+```
+  cd /tmp
+  git clone https://ocp-lab-user@bitbucket.org/ocplabusers/<repo>.git
+  cd user*
+  oc apply -f tools.yaml
+```
+
  
-Return to the "Overview page"
+Open a new browser tab and navigate to "Overview page"
 
 *What is the status of "tools"?*
 
@@ -59,12 +67,12 @@ Note the link "View Archived". This will bring you to Kibana.
 
 
 ## Exercise 2.3
-Restore the version number. Either use the Console or use oc command
+Restore the version number. Either use the Console or use oc command in the tools pod's terminal:
 ```
-  oc rollout undo dc
+  oc rollout undo dc tools
 ```
 
-This is the right image to use:
+You should end up using this image:
 ```
   image: 'docker-registry.default.svc:5000/prepare/openshift-cli:3.11b'
 ```

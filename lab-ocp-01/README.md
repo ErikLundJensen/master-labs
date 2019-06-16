@@ -84,8 +84,8 @@ or use the oc command to apply the file like below from the "debug terminal".
 Remember to insert your repository name, e.g. user01
 ```
   cd /tmp
-  git clone https://bitbucket.org/ocplabusers/<repo>.git
-  cd lab-ocp-01
+  git clone https://ocp-lab-user@bitbucket.org/ocplabusers/<repo>.git
+  cd user*
   oc apply -f tools.yaml
 ```
 
@@ -98,7 +98,7 @@ Don't use this in real life solutions.
 
 
 ## Exercise 1.5
-Open a terminal windows for the pod running "tools".  
+Open a terminal windows for the pod running "tools".
 Login using oc and list pods for your project.
 
 *Which security implication do you see when running this image and using oc command like this?*

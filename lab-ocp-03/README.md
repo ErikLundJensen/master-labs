@@ -4,13 +4,9 @@ Questions are written with italics and answers may be written at the line below.
 # Pre-setup of lab exercises
 
 Login to Bitbucket by accessing this URL if your are not already logged in:
-https://bitbucket.org/ocplabadmin/lab-ocp-003/src/master/
+https://bitbucket.org/ocplabadmin/master-labs/src/master/
 
-The username and password are given by instructor.  
-
-Create a new repository with name "lab-ocp-003" by forking the "lab-ocp-003" repository.
-You have received your own project in Bitbucket. Use that Bitbucket project (e.g. USER01) as target project.
-https://bitbucket.org/ocplabadmin/lab-ocp-003.git
+The files used for the exercises 3.x are located in this folder.
 
 You may write answers and comments into your forked repositories.
 
@@ -37,16 +33,6 @@ This version of tools.yaml requests 200 mb of memory. We will thereby run out of
 Let's how that looks.
 
 ```
- vi /tmp/tools.yaml
-```
-   press esc i  
-   paste file content into editor  
-   press esc : s  
-   press esc : q
-   
-   To exit and ignore changes then press esc : q!  
-```
- oc login ... (the copied command from OpenShift Console)   
  oc apply -f tools.yaml
 ```
  
