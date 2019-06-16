@@ -1,0 +1,38 @@
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  labels:
+    app: tools
+  name: tools
+spec:
+  replicas: 1
+  selector:
+    app: tools
+    deploymentconfig: tools
+  strategy:
+    resources: {}
+    rollingParams:
+    type: Rolling
+  template:
+    metadata:
+      labels:
+        app: tools
+        deploymentconfig: tools
+    spec:
+      containers:
+      - env:
+        - name: KUBECONFIG
+          value: /tmp/kubecfg
+        image: 'docker-registry.default.svc:5000/prepare/openshift-cli:3.11b'
+        imagePullPolicy: Always
+        name: tools
+        resources:
+            limits:
+              memory: 100Mi
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      restartPolicy: Always
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+  triggers:
+  - type: ConfigChange
