@@ -24,12 +24,12 @@ spec:
         env:
         - name: KUBECONFIG
           value: /tmp/kubecfg
-        image: 'docker-registry.default.svc:5000/prepare/openshift-cli:3.11b'
+        image: 'docker-registry.default.svc:5000/prepare/openshift-cli:4.11b'
         imagePullPolicy: Always
         name: tools
         resources:
             limits:
-              memory: 100Mi
+              memory: 200Mi
             requests:
               memory: 10Mi
         terminationMessagePath: /dev/termination-log

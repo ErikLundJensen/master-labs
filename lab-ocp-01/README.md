@@ -31,7 +31,7 @@ Let's get an image which contains that.
 
 Deploy tools-image to your project in OpenShift.  
 Select "Import YAML/JSON" from the "Add to Project"  
-Paste the content of tools.yaml found in the same folder as this README.md file.
+Paste the content of tools-org.yaml found in the same folder as this README.md file.
 
 
 After deployment verify if pod is alive.  
@@ -76,7 +76,7 @@ https://docs.openshift.com/container-platform/3.11/rest_api/apis-apps.openshift.
 
 ## Exercise 1.4
 The container is constantly restarted. Let's try another deployment configuration.  
-Import the file tools-stay-alive.yaml from your repository into OpenShift.
+Import the file tools.yaml from your repository into OpenShift.
 
 Use the OpenShift Console for this task as before ("Add to project" -> "Import ymal")
 
@@ -86,7 +86,7 @@ Remember to insert your repository name, e.g. user01
   cd /tmp
   git clone https://bitbucket.org/ocplabusers/<repo>.git
   cd lab-ocp-01
-  oc apply -f tools-stay-alive.yaml
+  oc apply -f tools.yaml
 ```
 
 *Watch the pod status. Does the pod stay alive?*

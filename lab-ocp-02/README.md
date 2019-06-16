@@ -1,25 +1,21 @@
-This repository contains exercises for Lund & Bendsen training sessions
+This repository contains exercises for Lund & Bendsen training sessions  
 Questions are written with italics and answers may be written at the line below.
 
 # Pre-setup of lab exercises
 
-Login to Bitbucket by accessing this URL if your are not already logged in:
-https://bitbucket.org/ocplabadmin/lab-ocp-002/src/master/
+Login to Bitbucket by accessing this URL if your are not already logged in:  
+https://bitbucket.org/ocplabadmin/master-labs/src/master/
 
 The username and password are given by instructor.  
 
-Create a new repository with name "lab-ocp-002" by forking the "lab-ocp-002" repository.
-You have received your own project in Bitbucket. Use that Bitbucket project (e.g. USER01) as target project.
-https://bitbucket.org/ocplabadmin/lab-ocp-002.git
-
-You may write answers and comments into your forked repositories.
+The files used for the exercises 2.x are located in this folder.
 
 ## Exercise 2.1
 Login into OpenShift using the username and password given by the instructor.
 
-Navigate to your project (e.g. USER01)
-Select the "tools" pod from the "Overview page"
-Select "Events" from the menu.
+Navigate to your project (e.g. USER01)  
+Select the "tools" pod from the "Overview page"  
+Select "Events" from the menu.  
 
 You should see events like:
 Started
@@ -28,10 +24,11 @@ Pulled
 Pulling
 Scheduled
 
-Navigate to Applications/Deployment and modify the image version to a non-existing version.
-For example update the element image to use version v4.11.0:
+Navigate to Applications/Deployment and modify the image version to a non-existing version.  
+For example update the element image to use version 4.11b.  
+Either do it by using the Console (Edit deployment) or use oc to apply the new tools.yaml file found in the folder for this exercise.  
 ```
- image: 'widerin/openshift-cli:v4.11.0'
+ image: 'docker-registry.default.svc:5000/prepare/openshift-cli:4.11b'
 ```
  
 Return to the "Overview page"
@@ -40,8 +37,8 @@ Return to the "Overview page"
 
 ______________
  
-Expand the bar and see the pod status.
-The new pod does not start, right?
+Expand the bar and see the pod status.  
+The new pod does not start, right?  
 Navigate to "Events"
 
 The events should indicate why the deployment is waiting.
@@ -53,18 +50,23 @@ _yes/no_
 ## Exercise 2.2
 Navigate to the list of "pods"
 
-Be aware of the pod in state "image pull back-off"
-Select the pod with the post-fix deploy.
+Be aware of the pod in state "image pull back-off"  
+Select the pod with the post-fix deploy.  
 Select "logs".
 
-Sometime you will find messages that can help you solving a failed deployment.
+Sometime you will find messages that can help you solving a failed deployment.  
 Note the link "View Archived". This will bring you to Kibana.
 
 
 ## Exercise 2.3
-Restore the version number:
+Restore the version number. Either use the Console or use oc command
 ```
- image: 'widerin/openshift-cli:v3.11.0'
+  oc rollout undo dc
+```
+
+This is the right image to use:
+```
+  image: 'docker-registry.default.svc:5000/prepare/openshift-cli:3.11b'
 ```
 Watch the status of the deployment.
 
