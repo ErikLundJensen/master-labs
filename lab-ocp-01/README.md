@@ -12,11 +12,17 @@ Navigate to your assigned Bitbucket project (e.g. USER01). You have received you
 Create a new repository with your username (e.g "user01") by forking the "master-labs" repository found here:  
 https://bitbucket.org/ocplabadmin/master-labs.git
 
-You may write answers and comments into your forked repositories.
-
+You may write answers and comments into your forked repositories.  
 
 The files used for the exercises 1.x are located in this folder.
 
+
+Other information you may need during the exercises.  
+The URL to OpenShift Console is:  
+https://console.pro-us-east-1.openshift.com/console
+
+The URL to master API is:  
+https://api.pro-us-east-1.openshift.com
 
 
 ## Exercise 1.1
