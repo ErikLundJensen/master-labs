@@ -40,8 +40,7 @@ Watch the "overview" page in the Console to see what happens.
 Some of you may get a new running pod.
 Others will be stuck in deployment phase.
 
-If your pods did not fail then scale the number of pods to 5.
-And wait for the result.
+Scale the number of pods to 5.
 
 ## Exercise 2.3
 Navigate to the "monitor" -> "monitoring and events"
@@ -60,7 +59,7 @@ Let's clean up in the following exercises.
 
 
 ## Exercise 3.3
-Change the requested memory to 20 mb in the configuration.
+Change the requested memory to 10 mb in the deployment configuration.
 This time edit the yaml by using the OpenShift Console.
 
 Watch the status of the deployment "tools"
