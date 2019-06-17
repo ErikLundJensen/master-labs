@@ -42,7 +42,7 @@ Others will be stuck in deployment phase.
 
 Scale the number of pods to 5.
 
-## Exercise 2.3
+## Exercise 3.3
 Navigate to the "monitor" -> "monitoring and events"
 
 Look at the event. You should see something similar to:

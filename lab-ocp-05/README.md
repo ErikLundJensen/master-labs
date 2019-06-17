@@ -1,29 +1,29 @@
 This repository contains exercises for Lund & Bendsen training sessions
 Questions are written with italics and answers may be written at the line below.
 
-# Pre-setup of lab exercises
-
-Login to Bitbucket by accessing this URL if your are not already logged in:
-https://bitbucket.org/ocplabadmin/lab-ocp-005/src/master/
-
-The username and password are given by instructor.  
-
-Create a new repository with name "lab-ocp-005" by forking the "lab-ocp-005" repository.
-You have received your own project in Bitbucket. Use that Bitbucket project (e.g. USER01) as target project.
-https://bitbucket.org/ocplabadmin/lab-ocp-005.git
-
-You may write answers and comments into your forked repositories.
+## Pre-setup of lab exercises
 
 
-OpenShift Online does not allow building from Dockerfile. Therefore I have prepared the image locally:
+
+## Exercise 5
+
+This exercise is located in the repository listed below. Follow the instruction in the README.md file in that repository.
+
+https://bitbucket.org/erik-lund/exercise-5a
+  
+
+## Exercise 5.x
+OpenShift Online does not allow building from Dockerfile. This exercise is therefore skipped.
+
 ```
-sudo docker login -u erik@lund.ai -p <token> https://registry.pro-us-east-1.openshift.com 
+docker login -u demo@erikjensen.it -p <token> https://registry.pro-us-east-1.openshift.com 
 
 export VERS=3.11b
+export USER=user01
 
-sudo docker  build -t prepare/openshift-cli .
-sudo docker tag prepare/openshift-cli:latest registry.pro-us-east-1.openshift.com/prepare/openshift-cli:${VERS}
-sudo docker push registry.pro-us-east-1.openshift.com/prepare/openshift-cli:${VERS}
+docker  build -t ${USER}/openshift-cli .
+docker tag ${USER}/openshift-cli:latest registry.pro-us-east-1.openshift.com/${USER}/openshift-cli:${VERS}
+docker push registry.pro-us-east-1.openshift.com/prepare/openshift-cli:${VERS}
 ```
 
 
