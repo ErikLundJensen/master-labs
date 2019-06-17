@@ -76,3 +76,8 @@ Watch the Build in OpenShift Console when merging the pull-request in BitBucket.
 Take a look at the file assembly in .s2i/bin folder.  
 There is room for improvement...
 
+## Exercise 8.6
+
+Try some more changes to get a feeling of it.
+ 
+
