@@ -1,0 +1,65 @@
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  labels:
+    app: helloworld
+  name: helloworld
+spec:
+  replicas: 1
+  revisionHistoryLimit: 4
+  selector:
+    app: helloworld
+    deploymentconfig: helloworld
+  strategy:
+    activeDeadlineSeconds: 21600
+    resources: {}
+    rollingParams:
+      intervalSeconds: 1
+      maxSurge: 25%
+      maxUnavailable: 25%
+      timeoutSeconds: 600
+      updatePeriodSeconds: 1
+    type: Rolling
+  template:
+    metadata:
+      labels:
+        app: helloworld
+        deploymentconfig: helloworld
+    spec:
+      containers:
+        - env:
+            - name: JAVA_MAX_MEM_RATIO
+              value: '70'
+          image: >-
+            docker-registry.default.svc:5000/user01/helloworld@sha256:8621abaad5ddf57b68de26cb5c341e788354d89c14e31e734472080190bfd98a
+          imagePullPolicy: Always
+          name: helloworld
+          ports:
+            - containerPort: 8778
+              protocol: TCP
+            - containerPort: 8080
+              protocol: TCP
+            - containerPort: 8443
+              protocol: TCP
+          resources:
+            limits:
+              memory: 280Mi
+            requests:
+              memory: 50Mi
+          volumeMounts:
+          - name: config-volume
+            mountPath: /etc/config
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+      volumes:
+        - name: config-volume
+          configMap:
+            name: helloworld
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+  test: false
+  triggers:
+    - type: ConfigChange

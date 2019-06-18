@@ -84,7 +84,7 @@ https://docs.openshift.com/container-platform/3.11/rest_api/apis-apps.openshift.
 The container is constantly restarted. Let's try another deployment configuration.  
 Import the file tools.yaml from your repository into OpenShift.
 
-Use the OpenShift Console for this task as before ("Add to project" -> "Import ymal")
+Use the OpenShift Console for this task as before ("Add to project" -> "Import yaml")
 
 or use the oc command to apply the file like below from the "debug terminal".
 Remember to insert your repository name, e.g. user01

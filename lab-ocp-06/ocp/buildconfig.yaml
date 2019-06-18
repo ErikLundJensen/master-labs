@@ -1,0 +1,30 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  labels:
+    app: helloworld
+  name: helloworld
+spec:
+  failedBuildsHistoryLimit: 3
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'helloworld:latest'
+  postCommit: {}
+  resources: {}
+  runPolicy: Serial
+  source:
+    git:
+      uri: 'https://bitbucket.org/erik-lund/exercise-5a.git'
+    type: Git
+  strategy:
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: 'openjdk-11-rhel7:latest'
+    type: Source
+  successfulBuildsHistoryLimit: 3
+  triggers:
+    - generic:
+        secret: HTZtBKg-qReA6ZyK-Tjk
+      type: Generic
