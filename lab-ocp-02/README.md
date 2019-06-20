@@ -18,10 +18,10 @@ Select the "tools" pod from the "Overview page"
 Select "Events" from the menu.  
 
 You should see events like:
-Started
-Created
-Pulled
-Pulling
+Started  
+Created  
+Pulled  
+Pulling  
 Scheduled
 
 Navigate to Applications/Deployment and modify the image version to a non-existing version.  
