@@ -91,7 +91,7 @@ Remember to insert your repository name, e.g. user01
 ```
   cd /tmp
   git clone https://ocp-lab-user@bitbucket.org/ocplabusers/<repo>.git
-  cd user*
+  cd user01/lab-ocp-01/
   oc apply -f tools.yaml
 ```
 
