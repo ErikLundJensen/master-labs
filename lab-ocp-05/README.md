@@ -14,6 +14,7 @@ https://bitbucket.org/erik-lund/exercise-5a
 
 ## Exercise 5.x
 OpenShift Online does not allow building from Dockerfile. This exercise is therefore skipped.
+Below is an example of building using Docker commands.
 
 ```
 docker login -u demo@erikjensen.it -p <token> https://registry.pro-us-east-1.openshift.com 
