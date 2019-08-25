@@ -54,6 +54,5 @@ Light blue means the pod is not ready. No requests will be send to that pod.
 
 ## Exercise 4.4
 
-Restore proper readiness probe by applying the tools.yaml file again.
-
+Restore proper readiness probe by applying the tools.yaml file again.  
 Ensure the pod starts correctly.
