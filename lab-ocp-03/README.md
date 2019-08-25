@@ -29,7 +29,7 @@ Select "tools" pod from the "Overview page"
 Select "Terminal" from the menu.
 
 Apply the tools.yaml file from the lab-ocp-003 deployment.
-This version of tools.yaml requests 200 mb of memory. We will thereby run out of memory in the cluster when all are trying to deploy the new configuration.
+This version of tools.yaml requests 1000 mb of memory. We will thereby run out of memory in the cluster when all are trying to deploy the new configuration.
 Let's how that looks.
 
 ```
