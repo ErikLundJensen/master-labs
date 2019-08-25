@@ -19,10 +19,10 @@ The files used for the exercises 1.x are located in this folder.
 
 Other information you may need during the exercises.  
 The URL to OpenShift Console is:  
-https://console.pro-us-east-1.openshift.com/console
+https://console.pro-eu-east-1.openshift.com/console
 
 The URL to master API is:  
-https://api.pro-us-east-1.openshift.com
+https://api.pro-eu-east-1.openshift.com
 
 
 ## Exercise 1.1
