@@ -9,7 +9,7 @@ https://bitbucket.org/ocplabadmin/master-labs/src/master/
 The username and password are given by instructor.  
 First you need to fork this repository.
 
-Create a repository with your username (e.g "user01") by forking the "master-labs" repository found here:  
+Fork the repository below and give the new repository the same name your username (e.g "user01"):  
 https://bitbucket.org/ocplabadmin/master-labs.git
 
 You may write answers and comments into your forked repositories.  
