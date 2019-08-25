@@ -49,7 +49,7 @@ Construct an URL using this template:
 http://<openshift_api_host:port>/oapi/v1/namespaces/<namespace>/buildconfigs/<name>/webhooks/<secret>/generic
 
 For example
-https://api.pro-us-east-1.openshift.com/oapi/v1/namespaces/user01/buildconfigs/gitops-deployer/webhooks/suydfiasfasifaenifsf/generic
+https://api.pro-eu-west-1.openshift.com/oapi/v1/namespaces/user01/buildconfigs/gitops-deployer/webhooks/suydfiasfasifaenifsf/generic
 
 Expand the option "Choose from a full list of triggers" to find the merge-request-trigger.
 
