@@ -7,9 +7,9 @@ Login to Bitbucket by accessing this URL:
 https://bitbucket.org/ocplabadmin/master-labs/src/master/
 
 The username and password are given by instructor.  
-Navigate to your assigned Bitbucket project (e.g. USER01). You have received your own project in Bitbucket.
+First you need to fork this repository.
 
-Create a new repository with your username (e.g "user01") by forking the "master-labs" repository found here:  
+Create a repository with your username (e.g "user01") by forking the "master-labs" repository found here:  
 https://bitbucket.org/ocplabadmin/master-labs.git
 
 You may write answers and comments into your forked repositories.  
@@ -19,10 +19,10 @@ The files used for the exercises 1.x are located in this folder.
 
 Other information you may need during the exercises.  
 The URL to OpenShift Console is:  
-https://console.pro-eu-east-1.openshift.com/console
+https://console.pro-eu-west-1.openshift.com/console
 
 The URL to master API is:  
-https://api.pro-eu-east-1.openshift.com
+https://api.pro-eu-west-1.openshift.com
 
 
 ## Exercise 1.1
