@@ -20,6 +20,7 @@ Remember to login using the token from Console.
 ```
 
 Apply all the yaml files in the folder lab-ocp-06/ocp
+
 You may clone this respository to get the files into the pod:
 ```
 cd /tmp
@@ -60,6 +61,7 @@ oc get configmap helloworld -o yaml
 
 
 What about adding multiple files to a config map?
+
 You may specify a folder as argument. (Remember to change directory to the right location)
 ```
 oc delete configmap helloworld
@@ -77,6 +79,7 @@ Look at the "ConfigurationManagement" slide if you need to see the syntax.
 Note: You need to add the ConfigMap to volumes and mount the volume in the pod.
 
 Mount the ConfigMap into this location:
+
 /etc/config
 
 Watch the deployment and enter the pod's terminal to see the actual files in /etc/config
