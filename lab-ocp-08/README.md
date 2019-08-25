@@ -14,7 +14,7 @@ This exercise will walk you through a simple setup of GitOps to get a feeling of
 ## Exercise 8.1
 
 We need a repository that will control your OpenShift project.  
-Fork the following repository into a new repository named "user01":
+Fork the following repository into a new repository giving it a name like "user01-config":
 https://bitbucket.org/erik-lund/exercise-8a/src/master/
 
 Make it public until you have credentials configured.
