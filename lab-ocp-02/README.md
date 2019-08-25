@@ -18,6 +18,7 @@ Select the "tools" pod from the "Overview page"
 Select "Events" from the menu.  
 
 You should see events like:
+
 Started  
 Created  
 Pulled  
