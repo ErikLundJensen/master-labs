@@ -10,6 +10,8 @@ The files used for the exercises 6.x are located in this folder.
 
 You may write answers and comments into your forked repositories.
 
+We will use the HelloWorld app from exercise 5 here.
+
 ## Exercise 6.1
 
 Navigate to "tools" pod's terminal and delete all objects labled "app=helloworld"
@@ -18,18 +20,10 @@ Remember to login using the token from Console.
 ```
  oc delete pod -l app=helloworld
 ```
-
+Update the namespace in ocp/dc.yaml to match your namespace.
 Apply all the yaml files in the folder lab-ocp-06/ocp
 
-You may clone this respository to get the files into the pod:
-```
-cd /tmp
-git clone https://erik-lund@bitbucket.org/ocplabadmin/master-labs.git
-```
-
-Start the build of Helloworld using the oc start-build command.
-
-Verify that Helloworld is running.
+Verify that Helloworld is still running.
 
 
 ## Exercise 6.2
