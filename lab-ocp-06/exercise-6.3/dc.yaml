@@ -31,7 +31,7 @@ spec:
             - name: JAVA_MAX_MEM_RATIO
               value: '70'
           image: >-
-            docker-registry.default.svc:5000/user01/helloworld@sha256:8621abaad5ddf57b68de26cb5c341e788354d89c14e31e734472080190bfd98a
+            docker-registry.default.svc:5000/user01/helloworld:latest
           imagePullPolicy: Always
           name: helloworld
           ports:
