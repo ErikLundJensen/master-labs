@@ -26,7 +26,7 @@ You need to create a deploy engine in this exercise. It will be a pretty simple 
 
 Edit the git-uri in the buildconfig.yaml to match you newly created git repository in BitBucket.
 
-Apply the buildconfig.yaml file located in this folder.
+Apply the buildconfig.yaml and imageStream.yaml files located in this folder.
 It will create a BuildConfig named "gitops-deployer"
 
 We are doing a short-cut and setting up a token in the BuildConfig. Copy your login credentials from Console.  
