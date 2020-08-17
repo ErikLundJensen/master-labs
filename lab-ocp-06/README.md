@@ -106,10 +106,100 @@ Restart the pod by deleting the active running tools pod.
 
 Verify that the new pod still contains the /var/workspace still contains your cloned repository.
 
+## Exercise 6.6
+There are several ways to inject environment specific properties and files.
+The following exercises cover different use-cases:
+
+```
+- env
+
+- env:
+    valueFrom
+
+- envFrom
+
+- mount point of ConfigMap
+```
+The valueFrom may take values from:
+```
+  configMapKeyRef
+  secretKeyRef
+  fieldRef
+  resourceFieldRef
+```
 
 
+### 6.6.1
+
+Create a ConfigMap using the propertiesmap.yaml in folder exercise-6.6  
+Add environment key MY_USER_DOMAIN by using configMapKeyRef in the valuesFrom element in tools.yaml
+
+Verify that the new environment variable MY_USER_DOMAIN is equals to the value of USER_DOMAIN in the ConfigMap.  
+
+Use configMapKeyRef if the environment variable isn't the same as the name of the key in the ConfigMap.  
+Note, the environment variable and the key in the ConfigMap does not need to differ.
+
+### 6.6.2
+
+Create a Secret with key/values like the ConfigMap.  
+Refer to the secret using secretKeyRef
+
+Documentation fo secretKeyRef:
+https://kubernetes.io/docs/tasks/inject-data-application/distribute-credentials-secure/#define-container-environment-variables-using-secret-data
 
 
+## The Downward API
+
+Inject data extracted from the Kubernetes API.  
+Link to the documentation which relates to the next exercises:
+https://kubernetes.io/docs/tasks/inject-data-application/environment-variable-expose-pod-information/
+
+### 6.6.3
+
+Add a fieldRef "spec.nodeName" to the tools yaml.
+For example here is added namespace as an environment variable:
+
+```
+        - name: MY_POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+```
+
+After adding the fieldRef verify that the new environment variable is available in the pod.
+
+### 6.6.4
+
+Add a resourceFieldRef "request.memory" to the tools yaml. 
+For example:
+```
+        - name: MY_LIMITS_MEMORY
+          valueFrom:
+            resourceFieldRef:
+              containerName: client-container
+              resource: limits.memory
+              divisor: 1Mi
+```
+The containerName is optional if the pod contains only one pod.
+
+
+### 6.6.5
+
+References may also be injected into mounted files using the downwardAPI element:
+
+Incomplete example:
+```
+  volumes:
+    - name: podinfo
+      downwardAPI:
+        items:
+          - path: "cpu_limit"
+            resourceFiel...
+```
+
+Add a new file containing all the "metadata.labels". You may look into the documentation:
+
+https://kubernetes.io/docs/tasks/inject-data-application/downward-api-volume-expose-pod-information/
 
 
 

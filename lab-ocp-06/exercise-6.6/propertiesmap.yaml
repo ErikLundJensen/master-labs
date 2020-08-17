@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: propertiesmap
+data:
+  USER_DOMAIN: "erikjensen.it"
+  USER_NAME: "demo"
