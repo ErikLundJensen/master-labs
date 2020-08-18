@@ -45,11 +45,11 @@ Next the pod is terminated and a new pod is started.
 Let's see what happens if initialDelay is too long.  
 Change the initial delay to 20 seconds for the readiness probe:
 ```
-            initialDelaySeconds: 30
+            initialDelaySeconds: 20
 ```
 
 Watch the pod restarts and focus at the color change.  
-Light blue means the pod is not ready. No requests will be send to that pod.
+Light blue means the pod is not ready. No requests will be sent to that pod.
 
 
 ## Exercise 4.4
