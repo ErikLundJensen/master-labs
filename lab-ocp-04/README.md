@@ -26,7 +26,7 @@ Wait for the deployment to complete.
 Open 3 tabs of OpenShift Console.  
 - Navigate to "Monitoring and Events" in the 1st tab  
 - Navigate to "Overview" in the second tab  
-- Navigate to tools pod's terminal in the third pod  
+- Navigate to tools pod's terminal in the third tab  
 
 The health is monitoring the /tmp/healthy file. If this file is removed then the container is considered un-healthy.  
 Remove the file inside the tools pod.
