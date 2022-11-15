@@ -1,9 +1,0 @@
-apiVersion: image.openshift.io/v1
-kind: ImageStream
-metadata:
-  labels:
-    app: gitops-deployer
-  name: gitops-deployer
-spec:
-  lookupPolicy:
-    local: true

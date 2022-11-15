@@ -3,56 +3,54 @@ Questions are written with italics and answers may be written at the line below.
 
 # Pre-setup of lab exercises
 
-Login to Bitbucket by accessing this URL if your are not already logged in:
-https://bitbucket.org/ocplabadmin/master-labs/src/master/
+Continue from previous setup.
 
 The files used for the exercises 4.x are located in this folder.
-
-You may write answers and comments into your forked repositories.
 
 ## Exercise 4.1
 
 This exercise goes through configuration of readiness and lifeness probes.
 
-Add the readiness and liveness probes to the "tools" deployment.
-Use the tools.yaml file in this folder.
+First we will use an invalid readiness and liveness probes to simulate an unhealty pod. 
+Use the podinfo-unhealthy.yaml file in this folder.
 
-Either copy content to Console or use oc apply command.
+```
+  oc apply -f podinfo-unhealty.yaml
+  oc get pod --watch
+```
+Watch that the pods gets terminated and restarts with an interval around 14 seconds.
 
-Wait for the deployment to complete.
+Consider why does the pod restart after around 14 seconds?
+
 
 ## Exercise 4.2
 
-Open 3 tabs of OpenShift Console.  
-- Navigate to "Monitoring and Events" in the 1st tab  
-- Navigate to "Overview" in the second tab  
-- Navigate to tools pod's terminal in the third tab  
+Modify the liveness health command in the podinfo-unhealthy.yaml file:  
+`- localhost:9898/healthz`
 
-The health is monitoring the /tmp/healthy file. If this file is removed then the container is considered un-healthy.  
-Remove the file inside the tools pod.
-
+and apply the file again.
 ```
-rm /tmp/healthy
+  oc apply -f podinfo-unhealty.yaml
+  oc get pod --watch
 ```
 
-Watch the 1st and 2nd tabs.  
-Note the color change of the pod from dark blue to light blue. The pod get unavailable.  
-Next the pod is terminated and a new pod is started.
+Does the pod still restart?
 
 
 ## Exercise 4.3
 
-Let's see what happens if initialDelay is too long.  
-Change the initial delay to 20 seconds for the readiness probe:
+Let's see what happens if initialDelay is high long.  
+Change the initial delay to 10 seconds for the readiness probe and apply the file again:
 ```
-            initialDelaySeconds: 20
+  initialDelaySeconds: 10
 ```
 
-Watch the pod restarts and focus at the color change.  
-Light blue means the pod is not ready. No requests will be sent to that pod.
+Watch the pod restarts and notice that it takes much longer for the pod to get into ready state.   
 
 
 ## Exercise 4.4
 
-Restore proper readiness probe by applying the tools.yaml file again.  
+Restore proper readiness probe by applying the podinfo.yaml file again.  
 Ensure the pod starts correctly.
+
+
