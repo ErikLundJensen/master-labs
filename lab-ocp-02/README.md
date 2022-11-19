@@ -21,7 +21,7 @@ Delete the pod and follow the Kubernetes events
 
 ```
   oc delete pod --selector=app.kubernetes.io/name=podinfo
-  oc get events --follow
+  oc get events --watch
 ```
 
 
@@ -32,7 +32,7 @@ We would like to see how errors may look like.
 Apply the podinfo-unknow-image.yaml and watch the events
 ```
   oc apply -f podinfo-unknow-image.yaml
-  oc get events --follow
+  oc get events --watch
 ```
 
 Be aware of the pod in state "image pull back-off"  

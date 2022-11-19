@@ -13,7 +13,7 @@ Add the following to you local /etc/hosts file (Linux). If you already have entr
 You will get the IP-ADDRESS from the instructor.
 
 ```
-IP-ADDRESS api.crc.testing canary-openshift-ingress-canary.apps-crc.testing console-openshift-console.apps-crc.testing default-route-openshift-image-registry.apps-crc.testing downloads-openshift-console.apps-crc.testing oauth-openshift.apps-crc.testing
+IP-ADDRESS  git.testing api.crc.testing canary-openshift-ingress-canary.apps-crc.testing console-openshift-console.apps-crc.testing default-route-openshift-image-registry.apps-crc.testing downloads-openshift-console.apps-crc.testing oauth-openshift.apps-crc.testing
 ```
 
 The OpenShift Console URL is:  

@@ -1,0 +1,7 @@
+company:
+  name: sell2much
+  services:
+  - name: "billing"
+    scale: 3
+  - name: "orders"
+    scale: 2

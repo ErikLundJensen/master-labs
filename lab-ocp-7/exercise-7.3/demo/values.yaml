@@ -1,0 +1,12 @@
+# The values to use
+
+defaultScale: 1
+company:
+  name: sell2much
+  services:
+  - name: billing
+    country: dk
+    scale: 3
+  - name: orders
+    region: eu
+
