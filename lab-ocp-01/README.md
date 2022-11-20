@@ -13,21 +13,21 @@ Add the following to you local /etc/hosts file (Linux). If you already have entr
 You will get the IP-ADDRESS from the instructor.
 
 ```
-IP-ADDRESS  git.testing api.crc.testing canary-openshift-ingress-canary.apps-crc.testing console-openshift-console.apps-crc.testing default-route-openshift-image-registry.apps-crc.testing downloads-openshift-console.apps-crc.testing oauth-openshift.apps-crc.testing
+IP-ADDRESS argocd-server-argocd.apps-crc.testing api.crc.testing canary-openshift-ingress-canary.apps-crc.testing console-openshift-console.apps-crc.testing default-route-openshift-image-registry.apps-crc.testing downloads-openshift-console.apps-crc.testing oauth-openshift.apps-crc.testing
 ```
 
 The OpenShift Console URL is:  
 https://console-openshift-console.apps-crc.testing
 
-Use the 'oc' command line interface, replace <X> with your user-number:
+Use the 'oc' command line interface, replace <n> with your user-number:
 ```
 eval $(crc oc-env)
-oc login -u user<X> https://api.crc.testing:6443
+oc login -u user-<n> https://api.crc.testing:6443
 ```
 
 ## Exercise 1
-Use the oc command to apply the file like below from the "debug terminal".
-Remember to insert your repository name, e.g. user01
+Use the oc command to apply the file like below from 
+
 ```
   cd /tmp
   git clone https://github.com/ErikLundJensen/master-labs.git
