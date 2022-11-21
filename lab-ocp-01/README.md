@@ -18,9 +18,9 @@ Add the following to you local /etc/hosts file (Linux). If you already have entr
 The OpenShift Console URL is:  
 https://console-openshift-console.apps-crc.testing
 
-Use the 'oc' command line interface, replace <n> with your user-number:
+Use the 'oc' command line interface, replace <n> with your user-number.
+Copy the oc login command from the OpenShift UI.
 ```
-eval $(crc oc-env)
 oc login -u user-<n> https://api.crc.testing:6443
 ```
 
